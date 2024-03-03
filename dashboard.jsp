@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +13,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            
         }
 
         header {
@@ -39,10 +36,6 @@
             transition: color 0.3s;
         }
 
-         #assign{
-            padding-left: 25px;;
-        }
-
         nav a:hover {
             color: #4285f4;
         }
@@ -55,97 +48,22 @@
             color: #4285f4;
         }
 
-        .classroom-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .classroom-list li {
-            border: 1px solid #ddd;
-            margin: 10px 0;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
+        .dashboard-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: box-shadow 0.3s;
+            justify-content: space-around;
+            margin: 20px;
         }
 
-        .classroom-list li:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        .dashboard-container section {
+            width: 48%;
         }
 
-        .classroom-list li a {
-            text-decoration: none;
-            color: #4285f4;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .classroom-list li a:hover {
-            color: #333;
-        }
-
-        .assignments {
-            margin-top: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .assignment-item {
-            border: 1px solid #ddd;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: box-shadow 0.3s;
-        }
-
-        .assignment-item:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .grades {
-            margin-top: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .grade-item {
-            border: 1px solid #ddd;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: box-shadow 0.3s;
-        }
-
-        .grade-item:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding-top: 10px;
-            text-align: center;
-            position:relative;
-            margin-top:330px;
-        }
-
-       .course-container {
+        .course-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
+            margin-top: 20px;
         }
 
         .course {
@@ -173,34 +91,14 @@
             color: #666;
         }
 
-        #myCourses {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        #myCourses .course {
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding-top: 10px;
             text-align: center;
-            margin: 15px;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            position:relative;
+            margin-top: 425px;
         }
-
-        #myCourses .course h3 {
-            margin-bottom: 10px;
-            color: #ff6b6b;
-        }
-
-        #myCourses .course p {
-            font-size: 14px;
-            color: #666;
-        }
-       
     </style>
 
 </head>
@@ -217,24 +115,26 @@
         <a href="logout.jsp"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </nav>
 
-    <section>
-        <h2><a href="mycourses.jsp">Enrolled Courses</a></h2>
-        <div class="course-container" id="dashboardCourses">
-            <!-- Enrolled courses will be dynamically added here -->
-        </div>
-    </section>
+    <div class="dashboard-container">
+        <!-- Enrolled Courses Section -->
+        <section>
+            <h2><a href="mycourses.jsp">Enrolled Courses</a></h2>
+            <div class="course-container" id="dashboardCourses">
+                <!-- Enrolled courses will be dynamically added here -->
+            </div>
+        </section>
 
-    
-
-
-    <h2 id="assign"><a href="assignments.jsp">Assignments</a></h2>
-    <section id="assignments" class="assignments">
-    </section>
+        <!-- Assignments Section -->
+        <section>
+            <h2><a href="assignments.jsp">Assignments</a></h2>
+            <!-- Assignments content will be added here -->
+        </section>
+    </div>
 
     <footer>
         &copy; 2024 Classroom Dashboard
     </footer>
-    
+
 </body>
 
 </html>
